@@ -277,11 +277,19 @@
   align-items: center;
   gap: 6px;
 }
-.payment-header-right {
+.payment-toggle-btn {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.payment-toggle-btn:active {
+  background: rgba(90, 200, 212, 0.1);
 }
 .payment-title {
   font-size: 15px;

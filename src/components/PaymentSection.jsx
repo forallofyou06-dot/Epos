@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function YenIcon() {
   return (
@@ -9,16 +9,19 @@ function YenIcon() {
   )
 }
 
-function EyeIcon() {
+function EyeIcon({ crossed }) {
   return (
     <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
       <path d="M10 1C5 1 1 7 1 7s4 6 9 6 9-6 9-6-4-6-9-6z" stroke="#5ac8d4" strokeWidth="1.5" fill="none" />
       <circle cx="10" cy="7" r="3" stroke="#5ac8d4" strokeWidth="1.5" fill="none" />
+      {crossed && (
+        <line x1="3" y1="1" x2="17" y2="13" stroke="#5ac8d4" strokeWidth="1.5" strokeLinecap="round" />
+      )}
     </svg>
   )
 }
 
-function PaymentCard({ date, status, confirmed }) {
+function PaymentCard({ date, status, confirmed, amount, visible }) {
   return (
     <div className="payment-card">
       <div className="payment-date">{date} のお支払額</div>
@@ -26,13 +29,17 @@ function PaymentCard({ date, status, confirmed }) {
         <span className={`payment-badge ${confirmed ? 'confirmed' : 'unconfirmed'}`}>
           {status}
         </span>
-        <span className="payment-amount">¥ &bull;&bull;&bull;</span>
+        <span className="payment-amount">
+          {visible ? `¥ ${amount.toLocaleString()}` : '¥ •••'}
+        </span>
       </div>
     </div>
   )
 }
 
 export default function PaymentSection() {
+  const [visible, setVisible] = useState(false)
+
   return (
     <div className="payment-section">
       <div className="payment-header">
@@ -40,15 +47,21 @@ export default function PaymentSection() {
           <YenIcon />
           <span className="payment-title">お支払照会</span>
         </div>
-        <div className="payment-header-right">
-          <EyeIcon />
-          <span className="payment-show-label">表示</span>
-        </div>
+        <button className="payment-toggle-btn" onClick={() => setVisible(v => !v)}>
+          <EyeIcon crossed={visible} />
+          <span className="payment-show-label">{visible ? '非表示' : '表示'}</span>
+        </button>
       </div>
 
       <div className="payment-cards-row">
-        <PaymentCard date="2026/04/27" status="確定" confirmed={true} />
-        <PaymentCard date="2026/05/27" status="未確定" confirmed={false} />
+        <PaymentCard
+          date="2026/04/27" status="確定" confirmed={true}
+          amount={4000} visible={visible}
+        />
+        <PaymentCard
+          date="2026/05/27" status="未確定" confirmed={false}
+          amount={3000} visible={visible}
+        />
       </div>
     </div>
   )
