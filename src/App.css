@@ -1,0 +1,453 @@
+/* ── Phone frame ── */
+.phone-frame {
+  width: 375px;
+  min-height: 100dvh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Status bar ── */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px 4px;
+  background: white;
+}
+.status-time {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.status-4g {
+  font-size: 11px;
+  font-weight: 700;
+  color: #222;
+}
+.battery {
+  display: flex;
+  align-items: center;
+}
+.battery-body {
+  width: 22px;
+  height: 11px;
+  border: 1.5px solid #333;
+  border-radius: 2px;
+  padding: 1.5px;
+  display: flex;
+  align-items: center;
+}
+.battery-fill {
+  height: 100%;
+  background: #333;
+  border-radius: 1px;
+}
+.battery-tip {
+  width: 2px;
+  height: 5px;
+  background: #333;
+  border-radius: 0 1px 1px 0;
+  margin-left: 1px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px 10px;
+  background: white;
+}
+.header-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.header-icon-btn.icon-gray {
+  background: #f0f0f0;
+}
+.header-icon-btn.icon-teal {
+  background: #5ac8d4;
+  color: white;
+}
+.help-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+.header-right-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* EPOS Logo */
+.epos-logo {
+  display: flex;
+  align-items: baseline;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.logo-e { color: #3abdc8; }
+.logo-dot-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+.logo-p { color: #e87080; }
+.logo-bullet {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #e87080;
+  line-height: 1;
+}
+.logo-o { color: #e86040; }
+.logo-s { color: #9b5fb5; }
+
+/* ── Scroll area ── */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #dde8ee;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+/* ── Illustration ── */
+.illustration-wrap {
+  background: white;
+  padding: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.illust-nub {
+  width: 40px;
+  height: 5px;
+  background: #dde0e4;
+  border-radius: 3px;
+  margin: 6px auto 10px;
+}
+
+/* ── Announcement Banner ── */
+.banner-card {
+  background: white;
+  margin: 0 12px 12px;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  cursor: pointer;
+}
+.banner-text {
+  font-size: 13px;
+  color: #333;
+  text-decoration: underline;
+  flex: 1;
+  line-height: 1.4;
+}
+.banner-arrow {
+  font-size: 22px;
+  color: #5ac8d4;
+  margin-left: 8px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ── Points Section ── */
+.points-section {
+  display: flex;
+  gap: 10px;
+  padding: 0 12px 12px;
+}
+.stat-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.stat-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+.point-value {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+.point-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+.point-unit {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Bonus card */
+.bonus-milestones {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.milestone {
+  font-size: 11px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+.bonus-bar-wrap {
+  position: relative;
+}
+.bonus-bar-bg {
+  width: 100%;
+  height: 14px;
+  background: #e8e8e8;
+  border-radius: 7px;
+  overflow: visible;
+  position: relative;
+}
+.bonus-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f0b52e, #f8d060);
+  border-radius: 7px;
+  min-width: 2px;
+}
+.bonus-marker {
+  position: absolute;
+  top: -4px;
+  width: 1.5px;
+  height: 22px;
+  background: white;
+  transform: translateX(-50%);
+  border: 0.5px dashed #aaa;
+}
+
+/* ── Payment Section ── */
+.payment-section {
+  background: white;
+  border-radius: 12px;
+  margin: 0 12px 12px;
+  padding: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.payment-header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.payment-header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.payment-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+}
+.payment-show-label {
+  font-size: 13px;
+  color: #5ac8d4;
+  font-weight: 600;
+}
+.payment-cards-row {
+  display: flex;
+  gap: 10px;
+}
+.payment-card {
+  flex: 1;
+  background: #f5f8fa;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.payment-date {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+.payment-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.payment-badge {
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 2px 10px;
+  border: 1.5px solid;
+  white-space: nowrap;
+}
+.payment-badge.confirmed {
+  color: #555;
+  border-color: #999;
+  background: transparent;
+}
+.payment-badge.unconfirmed {
+  color: #888;
+  border-color: #bbb;
+  background: transparent;
+}
+.payment-amount {
+  font-size: 14px;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+/* ── Platinum Banner ── */
+.platinum-banner {
+  background: linear-gradient(135deg, #6b6b6b, #555 60%, #4a4a4a);
+  border-radius: 12px;
+  margin: 0 12px 12px;
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.platinum-card-icon {
+  width: 52px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+}
+.platinum-text {
+  flex: 1;
+}
+.platinum-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3px;
+}
+.platinum-sub {
+  font-size: 12px;
+  color: #ccc;
+}
+.platinum-arrow {
+  font-size: 24px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ── Quick Actions ── */
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 16px 20px;
+  background: #dde8ee;
+}
+.quick-action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+.quick-action-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.1s;
+}
+.quick-action-btn:active .quick-action-circle {
+  transform: scale(0.94);
+}
+
+/* ── Bottom Nav ── */
+.bottom-nav {
+  display: flex;
+  background: white;
+  border-top: 1px solid #e8e8e8;
+  padding: 8px 0 20px;
+  flex-shrink: 0;
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 2px;
+}
+.nav-label {
+  font-size: 10px;
+  color: #aaa;
+  line-height: 1;
+}
+.nav-item.nav-active .nav-label {
+  color: #5ac8d4;
+}
+
+.bottom-spacer {
+  height: 20px;
+}
+
+/* Responsive: on small screens show full-width */
+@media (max-width: 400px) {
+  .phone-frame {
+    width: 100vw;
+    box-shadow: none;
+  }
+}
