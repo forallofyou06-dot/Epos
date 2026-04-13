@@ -876,28 +876,43 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: calc(24px + env(safe-area-inset-top)) 30px 16px;
   min-height: 0;
   overflow: hidden;
 }
 
-.card-main-img {
+/* Image wrapper: clips the oversized image to show only the card */
+.card-img-wrap {
   flex: 1;
-  width: 100%;
-  max-width: 300px;
-  object-fit: contain;
   min-height: 0;
-  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.3));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(16px + env(safe-area-inset-top));
+}
+
+/*
+ * eposimage.png is 1536×1024 landscape.
+ * The portrait card occupies ~35% of the image width.
+ * Set width to 175% of the container so the card renders at
+ * roughly 175% × 35% ≈ 61% of screen width (~238px on 390px).
+ */
+.card-main-img {
+  width: 175%;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.38));
+}
+
+.card-btn-row {
+  padding: 14px 20px 18px;
+  flex-shrink: 0;
 }
 
 .card-number-btn {
-  align-self: flex-start;
-  flex-shrink: 0;
-  margin-top: 16px;
   padding: 10px 30px;
   border-radius: 25px;
-  border: none;
+  border: 2px solid white;
   background: white;
   color: #5ac8d4;
   font-size: 15px;
@@ -908,7 +923,7 @@
 .card-actions-panel {
   background: white;
   border-radius: 22px 22px 0 0;
-  padding: 18px 4px 8px;
+  padding: 18px 4px 10px;
   flex-shrink: 0;
 }
 
@@ -931,6 +946,15 @@
 
 .card-action-btn:active {
   opacity: 0.65;
+}
+
+.card-action-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-action-label {
