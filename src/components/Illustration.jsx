@@ -51,7 +51,7 @@ function NightWindow() {
 
 function Mascot() {
   return (
-    <image href={charaImg} x="82" y="22" width="80" height="110" />
+    <image href={charaImg} x="83" y="68" width="78" height="110" />
   )
 }
 
