@@ -6,15 +6,17 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
   background: #ffffff;
 }
 
 #root {
-  height: 100%;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 body {
