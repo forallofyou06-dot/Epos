@@ -859,3 +859,88 @@
   background: #fde0d8;
   color: #d06050;
 }
+
+/* ══════════════════════════════════════
+   Card Screen
+══════════════════════════════════════ */
+.card-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  background: linear-gradient(180deg, #62d2da 0%, #3ebec9 55%, #34b4c0 100%);
+}
+
+.card-visual-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(24px + env(safe-area-inset-top)) 30px 16px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.card-main-img {
+  flex: 1;
+  width: 100%;
+  max-width: 300px;
+  object-fit: contain;
+  min-height: 0;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.3));
+}
+
+.card-number-btn {
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin-top: 16px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #5ac8d4;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.card-actions-panel {
+  background: white;
+  border-radius: 22px 22px 0 0;
+  padding: 18px 4px 8px;
+  flex-shrink: 0;
+}
+
+.card-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-action-btn:active {
+  opacity: 0.65;
+}
+
+.card-action-label {
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.card-action-label-bold {
+  font-weight: 700;
+}
