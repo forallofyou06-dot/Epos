@@ -60,10 +60,6 @@ function NightWindow() {
  */
 function Mascot() {
   return (
-    {/*
-     * chara.png: 1536×1024 landscape. Character ≈ center 40% width, 70% height.
-     * At w=200, h=133 (native 1.5:1 ratio): character ~80×93px, center x=155.
-     */}
     <image
       href={charaImg}
       x="55" y="50"
