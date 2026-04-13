@@ -9,6 +9,7 @@ import PlatinumBanner from './components/PlatinumBanner'
 import QuickActions from './components/QuickActions'
 import BottomNav from './components/BottomNav'
 import PaymentInquiry from './components/PaymentInquiry'
+import QuestScreen from './components/QuestScreen'
 
 export default function App() {
   const [page, setPage] = useState(0)
@@ -31,6 +32,8 @@ export default function App() {
         </>
       ) : page === 1 ? (
         <PaymentInquiry />
+      ) : page === 3 ? (
+        <QuestScreen />
       ) : null}
       <BottomNav page={page} setPage={setPage} />
     </div>

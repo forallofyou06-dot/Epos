@@ -30,19 +30,6 @@ function BarChart() {
         </clipPath>
       </defs>
 
-      {/* dashed reference line – starts after indicator */}
-      <line x1="72" y1={refY} x2="330" y2={refY}
-        stroke="#ccc" strokeWidth="1" strokeDasharray="5,4" />
-
-      {/* 8万 indicator – simple mascot face (no image) */}
-      <circle cx="20" cy={refY} r="13" fill="#f8ddd8" />
-      <circle cx="20" cy={refY - 1} r="9" fill="#d98070" />
-      <circle cx="17" cy={refY - 2} r="1.3" fill="white" />
-      <circle cx="23" cy={refY - 2} r="1.3" fill="white" />
-      <path d={`M17,${refY + 2} Q20,${refY + 5} 23,${refY + 2}`} stroke="white" strokeWidth="1" fill="none" strokeLinecap="round" />
-      <text x="38" y={refY + 4} fontSize="12" fontWeight="700" fill="#444">8万</text>
-      <text x="57" y={refY + 4} fontSize="13" fill="#999">›</text>
-
       {/* 3/27 bar – variable (top) */}
       <rect x={b0x} y={cb - b0fH - b0vH} width={bW} height={b0vH} rx="5" fill="#a8d8e0" />
       {/* cover bottom radius seam */}
