@@ -62,8 +62,8 @@ function Mascot() {
   return (
     <image
       href={charaImg}
-      x="55" y="50"
-      width="200" height="133"
+      x="130" y="55"
+      width="100" height="67"
       preserveAspectRatio="xMidYMid meet"
     />
   )
