@@ -349,11 +349,13 @@
 
 /* ── Quick Actions ── */
 .quick-actions {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 12px 16px 20px;
-  background: #dde8ee;
+  background: white;
+  border-radius: 12px;
+  margin: 0 12px 10px;
+  padding: 8px 4px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 .quick-action-btn {
   background: transparent;
@@ -362,22 +364,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 0;
+  gap: 7px;
+  padding: 14px 4px 4px;
+  -webkit-tap-highlight-color: transparent;
 }
 .quick-action-circle {
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  border: 1.5px solid #b8dfe3;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.1s;
 }
 .quick-action-btn:active .quick-action-circle {
   transform: scale(0.94);
+}
+.quick-action-label {
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  line-height: 1.45;
+  white-space: pre-line;
 }
 
 /* ── Bottom Nav ── */
