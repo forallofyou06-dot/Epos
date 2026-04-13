@@ -113,16 +113,30 @@
 
 /* ── Announcement Banner ── */
 .banner-card {
+  position: relative;
   background: white;
-  margin: 0 12px 10px;
-  border-radius: 12px;
+  margin: 14px 12px 10px;
+  border-radius: 14px;
   padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
   cursor: pointer;
   text-decoration: none;
+}
+/* Speech bubble callout triangle pointing UP */
+.banner-card::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 12px solid white;
 }
 .banner-text {
   font-size: 13px;
