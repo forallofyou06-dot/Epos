@@ -60,10 +60,14 @@ function NightWindow() {
  */
 function Mascot() {
   return (
+    {/*
+     * chara.png: 1536×1024 landscape. Character ≈ center 40% width, 70% height.
+     * At w=200, h=133 (native 1.5:1 ratio): character ~80×93px, center x=155.
+     */}
     <image
       href={charaImg}
-      x="25" y="52"
-      width="240" height="160"
+      x="55" y="50"
+      width="200" height="133"
       preserveAspectRatio="xMidYMid meet"
     />
   )
@@ -136,9 +140,16 @@ export default function Illustration() {
         </defs>
 
         <PendantLamp />
-        <NightWindow />
-        <Chair />
-        <Cabinet />
+        {/*
+         * scale(0.65): shrink window/chair/cabinet to 65%.
+         * translate(99, 7) applied after scale shifts them into the right zone.
+         * Result: window at ~x215, cabinet at ~x263, all fit within 360px.
+         */}
+        <g transform="translate(99, 7) scale(0.65)">
+          <NightWindow />
+          <Chair />
+          <Cabinet />
+        </g>
         <Mascot />
       </svg>
 
