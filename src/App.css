@@ -1,62 +1,12 @@
 /* ── Phone frame ── */
 .phone-frame {
-  width: 375px;
+  width: 100%;
   min-height: 100dvh;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
-}
-
-/* ── Status bar ── */
-.status-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px 4px;
-  background: white;
-}
-.status-time {
-  font-size: 14px;
-  font-weight: 600;
-  color: #222;
-}
-.status-icons {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.status-4g {
-  font-size: 11px;
-  font-weight: 700;
-  color: #222;
-}
-.battery {
-  display: flex;
-  align-items: center;
-}
-.battery-body {
-  width: 22px;
-  height: 11px;
-  border: 1.5px solid #333;
-  border-radius: 2px;
-  padding: 1.5px;
-  display: flex;
-  align-items: center;
-}
-.battery-fill {
-  height: 100%;
-  background: #333;
-  border-radius: 1px;
-}
-.battery-tip {
-  width: 2px;
-  height: 5px;
-  background: #333;
-  border-radius: 0 1px 1px 0;
-  margin-left: 1px;
 }
 
 /* ── Header ── */
@@ -65,7 +15,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 14px 10px;
+  padding-top: calc(8px + env(safe-area-inset-top));
   background: white;
+  border-bottom: 1px solid #e8e8e8;
+  flex-shrink: 0;
 }
 .header-icon-btn {
   width: 38px;
@@ -136,6 +89,12 @@
 }
 .scroll-area::-webkit-scrollbar { display: none; }
 
+/* ── Content background ── */
+.content-bg {
+  background: #dde8ee;
+  padding-top: 10px;
+}
+
 /* ── Illustration ── */
 .illustration-wrap {
   background: white;
@@ -155,7 +114,7 @@
 /* ── Announcement Banner ── */
 .banner-card {
   background: white;
-  margin: 0 12px 12px;
+  margin: 0 12px 10px;
   border-radius: 12px;
   padding: 14px 16px;
   display: flex;
@@ -163,6 +122,7 @@
   justify-content: space-between;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   cursor: pointer;
+  text-decoration: none;
 }
 .banner-text {
   font-size: 13px;
@@ -183,7 +143,7 @@
 .points-section {
   display: flex;
   gap: 10px;
-  padding: 0 12px 12px;
+  padding: 0 12px 10px;
 }
 .stat-card {
   flex: 1;
@@ -262,7 +222,7 @@
 .payment-section {
   background: white;
   border-radius: 12px;
-  margin: 0 12px 12px;
+  margin: 0 12px 10px;
   padding: 14px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
@@ -349,7 +309,7 @@
 .platinum-banner {
   background: linear-gradient(135deg, #6b6b6b, #555 60%, #4a4a4a);
   border-radius: 12px;
-  margin: 0 12px 12px;
+  margin: 0 12px 10px;
   padding: 16px 14px;
   display: flex;
   align-items: center;
@@ -425,7 +385,8 @@
   display: flex;
   background: white;
   border-top: 1px solid #e8e8e8;
-  padding: 8px 0 20px;
+  padding: 8px 0;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
   flex-shrink: 0;
 }
 .nav-item {
@@ -449,13 +410,14 @@
 }
 
 .bottom-spacer {
-  height: 20px;
+  height: 8px;
 }
 
-/* Responsive: on small screens show full-width */
-@media (max-width: 400px) {
+/* Desktop: constrain to phone frame */
+@media (min-width: 500px) {
   .phone-frame {
-    width: 100vw;
-    box-shadow: none;
+    width: 390px;
+    min-height: 100dvh;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
   }
 }

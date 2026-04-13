@@ -2,11 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-html, body, #root {
+html, body {
   height: 100%;
-  background: #f0f0f0;
+  background: #ffffff;
+}
+
+#root {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -16,4 +21,12 @@ body {
   font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont,
     'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* デスクトップ表示時のみ背景グレー */
+@media (min-width: 500px) {
+  html, body {
+    background: #d0d0d0;
+  }
 }
