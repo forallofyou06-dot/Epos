@@ -1,4 +1,5 @@
 import React from 'react'
+import charaImg from './chara.png'
 
 /* ── SVG sub-parts ── */
 
@@ -49,37 +50,22 @@ function NightWindow() {
   )
 }
 
-/* ── EPOS wallet mascot (SVG) ── */
+/*
+ * chara.png is 1536×1024 landscape (ratio 1.5:1).
+ * The character occupies roughly the center 40% width × 70% height of the image.
+ * Displaying at 240×160 (matching the native ratio) makes:
+ *   - character appear ~96px wide, ~112px tall in viewBox coords
+ *   - centered at x=145, y=130  (good center-left position)
+ * Transparent background means only the character pixels render.
+ */
 function Mascot() {
-  const cx = 145, cy = 128
   return (
-    <g>
-      {/* Red card sticking out top at angle */}
-      <rect
-        x={cx + 4} y={cy - 58} width="22" height="36" rx="3"
-        fill="#e03535"
-        transform={`rotate(-12, ${cx + 15}, ${cy - 30})`}
-      />
-      {/* Wallet body */}
-      <rect x={cx - 32} y={cy - 30} width="64" height="60" rx="10" fill="#f07060" />
-      {/* Dashed stitching */}
-      <rect x={cx - 28} y={cy - 26} width="56" height="52" rx="8"
-        fill="none" stroke="white" strokeWidth="1.8" strokeDasharray="4.5,3" />
-      {/* Eyes */}
-      <circle cx={cx - 11} cy={cy - 6} r="4.2" fill="#333" />
-      <circle cx={cx + 11} cy={cy - 6} r="4.2" fill="#333" />
-      {/* Smile */}
-      <path d={`M${cx - 11},${cy + 7} Q${cx},${cy + 17} ${cx + 11},${cy + 7}`}
-        stroke="#333" strokeWidth="2.4" fill="none" strokeLinecap="round" />
-      {/* Left arm */}
-      <ellipse cx={cx - 41} cy={cy - 6} rx="11" ry="8" fill="#f07060" />
-      {/* Right arm */}
-      <ellipse cx={cx + 41} cy={cy - 6} rx="11" ry="8" fill="#f07060" />
-      {/* Left leg */}
-      <rect x={cx - 24} y={cy + 28} width="15" height="20" rx="7.5" fill="#f07060" />
-      {/* Right leg */}
-      <rect x={cx + 9}  y={cy + 28} width="15" height="20" rx="7.5" fill="#f07060" />
-    </g>
+    <image
+      href={charaImg}
+      x="25" y="52"
+      width="240" height="160"
+      preserveAspectRatio="xMidYMid meet"
+    />
   )
 }
 
