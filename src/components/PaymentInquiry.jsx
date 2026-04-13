@@ -2,20 +2,29 @@ import React, { useState } from 'react'
 
 /* ── Mini mascot for bar top ── */
 function BarMascot() {
-  const pink = '#e8968a'
-  const red = '#d44040'
+  const body = '#d98070'
+  const hat  = '#c43030'
   return (
     <g>
-      <rect x="-10" y="-12" width="7" height="12" rx="3.5" fill={pink} />
-      <rect x="3"   y="-12" width="7" height="12" rx="3.5" fill={pink} />
-      <rect x="-21" y="-32" width="7" height="14" rx="3.5" fill={pink} />
-      <rect x="14"  y="-32" width="7" height="14" rx="3.5" fill={pink} />
-      <rect x="-14" y="-40" width="28" height="30" rx="8" fill={pink} />
-      <polygon points="-11,-46 13,-54 15,-46 -9,-38" fill={red} />
-      <line x1="-10" y1="-28" x2="10" y2="-28" stroke="white" strokeWidth="1.7" strokeDasharray="3.5,2.5" strokeLinecap="round" />
-      <circle cx="-5" cy="-22" r="3.5" fill="white" />
-      <circle cx="5"  cy="-22" r="3.5" fill="white" />
-      <path d="M-5,-14 Q0,-10 5,-14" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      {/* legs – feet at y=0 */}
+      <rect x="-12" y="-14" width="10" height="14" rx="5" fill={body} />
+      <rect x="2"   y="-14" width="10" height="14" rx="5" fill={body} />
+      {/* arms */}
+      <rect x="-26" y="-38" width="12" height="18" rx="6" fill={body} />
+      <rect x="14"  y="-38" width="12" height="18" rx="6" fill={body} />
+      {/* body */}
+      <rect x="-15" y="-52" width="30" height="40" rx="10" fill={body} />
+      {/* hat */}
+      <polygon points="-11,-58 12,-65 14,-55 -9,-48" fill={hat} />
+      {/* stitch dashes */}
+      <rect x="-12" y="-43" width="7" height="5" rx="2.5" fill="white" />
+      <rect x="-4"  y="-43" width="7" height="5" rx="2.5" fill="white" />
+      <rect x="4"   y="-43" width="6" height="5" rx="2.5" fill="white" />
+      {/* eyes */}
+      <circle cx="-5" cy="-26" r="4" fill="white" />
+      <circle cx="5"  cy="-26" r="4" fill="white" />
+      {/* smile */}
+      <path d="M-6,-16 Q0,-11 6,-16" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
     </g>
   )
 }
@@ -46,13 +55,15 @@ function BarChart() {
       <line x1="10" y1={refY} x2="330" y2={refY}
         stroke="#ccc" strokeWidth="1" strokeDasharray="5,4" />
 
-      {/* 8万 indicator */}
-      <circle cx="28" cy={refY} r="13" fill="#f8ddd8" />
-      <circle cx="28" cy={refY - 1} r="9" fill="#e8968a" />
-      <circle cx="25" cy={refY - 2} r="1.3" fill="white" />
-      <circle cx="31" cy={refY - 2} r="1.3" fill="white" />
-      <path d={`M25,${refY + 2.5} Q28,${refY + 5} 31,${refY + 2.5}`}
-        stroke="white" strokeWidth="1" fill="none" strokeLinecap="round" />
+      {/* 8万 indicator – mini mascot */}
+      <rect x="15" cy={refY} y={refY - 13} width="26" height="26" rx="8" fill="#d98070" />
+      <polygon points={`18,${refY - 13} 36,${refY - 18} 38,${refY - 12} 20,${refY - 7}`} fill="#c43030" />
+      <rect x="19" y={refY - 9} width="5" height="3" rx="1.5" fill="white" />
+      <rect x="25" y={refY - 9} width="5" height="3" rx="1.5" fill="white" />
+      <circle cx="23" cy={refY} r="2" fill="white" />
+      <circle cx="33" cy={refY} r="2" fill="white" />
+      <path d={`M22,${refY + 5} Q28,${refY + 9} 34,${refY + 5}`}
+        stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" />
       <text x="46" y={refY + 4} fontSize="12" fontWeight="700" fill="#444">8万</text>
       <text x="64" y={refY + 4} fontSize="14" fill="#999">›</text>
 
@@ -93,15 +104,28 @@ function BarChart() {
   )
 }
 
-/* ── Notice box ── */
+/* ── Notice box mascot icon ── */
 function NoticeMascotIcon() {
+  const body = '#d98070'
+  const hat  = '#c43030'
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="14" r="13" fill="#f8ddd8" />
-      <circle cx="14" cy="13" r="9" fill="#e8968a" />
-      <circle cx="11" cy="11.5" r="1.8" fill="white" />
-      <circle cx="17" cy="11.5" r="1.8" fill="white" />
-      <path d="M11,16.5 Q14,19 17,16.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+    <svg width="30" height="30" viewBox="0 0 30 30">
+      {/* arms */}
+      <rect x="1"  y="13" width="7" height="12" rx="3.5" fill={body} />
+      <rect x="22" y="13" width="7" height="12" rx="3.5" fill={body} />
+      {/* body */}
+      <rect x="7" y="9" width="16" height="19" rx="6" fill={body} />
+      {/* hat */}
+      <polygon points="6,9 21,5 23,10 8,14" fill={hat} />
+      {/* stitch */}
+      <rect x="8"  y="12" width="4" height="3" rx="1.5" fill="white" />
+      <rect x="13" y="12" width="4" height="3" rx="1.5" fill="white" />
+      <rect x="18" y="12" width="3" height="3" rx="1.5" fill="white" />
+      {/* eyes */}
+      <circle cx="12" cy="20" r="2.5" fill="white" />
+      <circle cx="18" cy="20" r="2.5" fill="white" />
+      {/* smile */}
+      <path d="M11,25 Q15,28.5 19,25" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
     </svg>
   )
 }

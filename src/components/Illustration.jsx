@@ -49,49 +49,37 @@ function NightWindow() {
 }
 
 function Mascot() {
-  const pink = '#e8968a'
-  const red  = '#d44040'
+  const body = '#d98070'
+  const hat  = '#c43030'
 
   return (
     <g transform="translate(120, 80)">
-      {/* ── Arms (behind body) ── */}
-      <rect x="-45" y="18" width="15" height="27" rx="7" fill={pink} />
-      <rect x="30"  y="18" width="15" height="27" rx="7" fill={pink} />
+      {/* ── Arms ── */}
+      <rect x="-57" y="10" width="26" height="38" rx="13" fill={body} />
+      <rect x="31"  y="10" width="26" height="38" rx="13" fill={body} />
 
-      {/* ── Body: square with large rounded corners ── */}
-      <rect x="-31" y="0" width="62" height="63" rx="15" fill={pink} />
+      {/* ── Body ── */}
+      <rect x="-34" y="-4" width="68" height="74" rx="20" fill={body} />
 
-      {/* ── Hat: tilted card shape (polygon = parallelogram) ──
-            Points go clockwise: top-left → top-right → bottom-right → bottom-left
-            Slope: right side ~17px higher than left → clean -18° tilt             */}
-      <polygon
-        points="-22,-8 30,-24 33,-12 -19,4"
-        fill={red}
-        stroke={red}
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
+      {/* ── Hat: tilted red card ── */}
+      <polygon points="-22,-14 28,-30 32,-14 -18,-0" fill={hat} />
 
-      {/* ── Stitching: dashed white line near top of body ── */}
-      <line
-        x1="-23" y1="14" x2="23" y2="14"
-        stroke="white" strokeWidth="3"
-        strokeDasharray="5,4" strokeLinecap="round"
-      />
+      {/* ── Stitch: pill-shaped dashes ── */}
+      <rect x="-26" y="12" width="13" height="8" rx="4" fill="white" />
+      <rect x="-11" y="12" width="13" height="8" rx="4" fill="white" />
+      <rect x="4"   y="12" width="13" height="8" rx="4" fill="white" />
+      <rect x="19"  y="12" width="10" height="8" rx="4" fill="white" />
 
-      {/* ── Eyes: white filled circles ── */}
-      <circle cx="-10" cy="33" r="5.5" fill="white" />
-      <circle cx="10"  cy="33" r="5.5" fill="white" />
+      {/* ── Eyes ── */}
+      <circle cx="-12" cy="36" r="7.5" fill="white" />
+      <circle cx="12"  cy="36" r="7.5" fill="white" />
 
-      {/* ── Smile: gentle white arc ── */}
-      <path
-        d="M-10,45 Q0,56 10,45"
-        stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"
-      />
+      {/* ── Smile ── */}
+      <path d="M-13,50 Q0,64 13,50" stroke="white" strokeWidth="3.5" fill="none" strokeLinecap="round" />
 
       {/* ── Legs ── */}
-      <rect x="-19" y="60" width="14" height="23" rx="7" fill={pink} />
-      <rect x="5"   y="60" width="14" height="23" rx="7" fill={pink} />
+      <rect x="-26" y="68" width="18" height="28" rx="9" fill={body} />
+      <rect x="8"   y="68" width="18" height="28" rx="9" fill={body} />
     </g>
   )
 }
