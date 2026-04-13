@@ -24,14 +24,24 @@ function BarChart() {
 
   return (
     <svg width="100%" viewBox="0 0 340 212" style={{ display: 'block' }}>
-      {/* dashed reference line */}
-      <line x1="10" y1={refY} x2="330" y2={refY}
+      <defs>
+        <clipPath id="barMascotClip">
+          <rect x={b1cx - 28} y={b1Top - 58} width="56" height="60" />
+        </clipPath>
+      </defs>
+
+      {/* dashed reference line – starts after indicator */}
+      <line x1="72" y1={refY} x2="330" y2={refY}
         stroke="#ccc" strokeWidth="1" strokeDasharray="5,4" />
 
-      {/* 8万 indicator – mini mascot image */}
-      <image href={charaImg} x="8" y={refY - 22} width="30" height="30" />
-      <text x="46" y={refY + 4} fontSize="12" fontWeight="700" fill="#444">8万</text>
-      <text x="64" y={refY + 4} fontSize="14" fill="#999">›</text>
+      {/* 8万 indicator – simple mascot face (no image) */}
+      <circle cx="20" cy={refY} r="13" fill="#f8ddd8" />
+      <circle cx="20" cy={refY - 1} r="9" fill="#d98070" />
+      <circle cx="17" cy={refY - 2} r="1.3" fill="white" />
+      <circle cx="23" cy={refY - 2} r="1.3" fill="white" />
+      <path d={`M17,${refY + 2} Q20,${refY + 5} 23,${refY + 2}`} stroke="white" strokeWidth="1" fill="none" strokeLinecap="round" />
+      <text x="38" y={refY + 4} fontSize="12" fontWeight="700" fill="#444">8万</text>
+      <text x="57" y={refY + 4} fontSize="13" fill="#999">›</text>
 
       {/* 3/27 bar – variable (top) */}
       <rect x={b0x} y={cb - b0fH - b0vH} width={bW} height={b0vH} rx="5" fill="#a8d8e0" />
@@ -49,8 +59,11 @@ function BarChart() {
       {/* 5/27 bar */}
       <rect x={b2x} y={cb - b2tH} width={bW} height={b2tH} rx="5" fill="#b8dde8" />
 
-      {/* mascot on top of 4/27 bar */}
-      <image href={charaImg} x={b1cx - 28} y={b1Top - 58} width="56" height="60" />
+      {/* mascot on top of 4/27 bar – clipped to bounding box */}
+      <image href={charaImg}
+        x={b1cx - 28} y={b1Top - 58} width="56" height="60"
+        preserveAspectRatio="xMidYMid meet"
+        clipPath="url(#barMascotClip)" />
 
       {/* baseline */}
       <line x1="10" y1={cb} x2="330" y2={cb} stroke="#dde8ee" strokeWidth="1.5" />
