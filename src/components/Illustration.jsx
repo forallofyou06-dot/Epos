@@ -1,4 +1,5 @@
 import React from 'react'
+import charaImg from './chara.png'
 
 /* ── SVG sub-parts ── */
 
@@ -49,38 +50,8 @@ function NightWindow() {
 }
 
 function Mascot() {
-  const body = '#d98070'
-  const hat  = '#c43030'
-
   return (
-    <g transform="translate(120, 80)">
-      {/* ── Arms ── */}
-      <rect x="-57" y="10" width="26" height="38" rx="13" fill={body} />
-      <rect x="31"  y="10" width="26" height="38" rx="13" fill={body} />
-
-      {/* ── Body ── */}
-      <rect x="-34" y="-4" width="68" height="74" rx="20" fill={body} />
-
-      {/* ── Hat: tilted red card ── */}
-      <polygon points="-22,-14 28,-30 32,-14 -18,-0" fill={hat} />
-
-      {/* ── Stitch: pill-shaped dashes ── */}
-      <rect x="-26" y="12" width="13" height="8" rx="4" fill="white" />
-      <rect x="-11" y="12" width="13" height="8" rx="4" fill="white" />
-      <rect x="4"   y="12" width="13" height="8" rx="4" fill="white" />
-      <rect x="19"  y="12" width="10" height="8" rx="4" fill="white" />
-
-      {/* ── Eyes ── */}
-      <circle cx="-12" cy="36" r="7.5" fill="white" />
-      <circle cx="12"  cy="36" r="7.5" fill="white" />
-
-      {/* ── Smile ── */}
-      <path d="M-13,50 Q0,64 13,50" stroke="white" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-
-      {/* ── Legs ── */}
-      <rect x="-26" y="68" width="18" height="28" rx="9" fill={body} />
-      <rect x="8"   y="68" width="18" height="28" rx="9" fill={body} />
-    </g>
+    <image href={charaImg} x="82" y="22" width="80" height="110" />
   )
 }
 

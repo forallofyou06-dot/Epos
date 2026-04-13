@@ -1,33 +1,6 @@
 import React, { useState } from 'react'
+import charaImg from './chara.png'
 
-/* ── Mini mascot for bar top ── */
-function BarMascot() {
-  const body = '#d98070'
-  const hat  = '#c43030'
-  return (
-    <g>
-      {/* legs – feet at y=0 */}
-      <rect x="-12" y="-14" width="10" height="14" rx="5" fill={body} />
-      <rect x="2"   y="-14" width="10" height="14" rx="5" fill={body} />
-      {/* arms */}
-      <rect x="-26" y="-38" width="12" height="18" rx="6" fill={body} />
-      <rect x="14"  y="-38" width="12" height="18" rx="6" fill={body} />
-      {/* body */}
-      <rect x="-15" y="-52" width="30" height="40" rx="10" fill={body} />
-      {/* hat */}
-      <polygon points="-11,-58 12,-65 14,-55 -9,-48" fill={hat} />
-      {/* stitch dashes */}
-      <rect x="-12" y="-43" width="7" height="5" rx="2.5" fill="white" />
-      <rect x="-4"  y="-43" width="7" height="5" rx="2.5" fill="white" />
-      <rect x="4"   y="-43" width="6" height="5" rx="2.5" fill="white" />
-      {/* eyes */}
-      <circle cx="-5" cy="-26" r="4" fill="white" />
-      <circle cx="5"  cy="-26" r="4" fill="white" />
-      {/* smile */}
-      <path d="M-6,-16 Q0,-11 6,-16" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-    </g>
-  )
-}
 
 /* ── Bar chart ── */
 function BarChart() {
@@ -55,15 +28,8 @@ function BarChart() {
       <line x1="10" y1={refY} x2="330" y2={refY}
         stroke="#ccc" strokeWidth="1" strokeDasharray="5,4" />
 
-      {/* 8万 indicator – mini mascot */}
-      <rect x="15" cy={refY} y={refY - 13} width="26" height="26" rx="8" fill="#d98070" />
-      <polygon points={`18,${refY - 13} 36,${refY - 18} 38,${refY - 12} 20,${refY - 7}`} fill="#c43030" />
-      <rect x="19" y={refY - 9} width="5" height="3" rx="1.5" fill="white" />
-      <rect x="25" y={refY - 9} width="5" height="3" rx="1.5" fill="white" />
-      <circle cx="23" cy={refY} r="2" fill="white" />
-      <circle cx="33" cy={refY} r="2" fill="white" />
-      <path d={`M22,${refY + 5} Q28,${refY + 9} 34,${refY + 5}`}
-        stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+      {/* 8万 indicator – mini mascot image */}
+      <image href={charaImg} x="8" y={refY - 22} width="30" height="30" />
       <text x="46" y={refY + 4} fontSize="12" fontWeight="700" fill="#444">8万</text>
       <text x="64" y={refY + 4} fontSize="14" fill="#999">›</text>
 
@@ -83,14 +49,8 @@ function BarChart() {
       {/* 5/27 bar */}
       <rect x={b2x} y={cb - b2tH} width={bW} height={b2tH} rx="5" fill="#b8dde8" />
 
-      {/* mascot on top of 4/27 */}
-      <g transform={`translate(${b1cx},${b1Top})`}>
-        <BarMascot />
-      </g>
-
-      {/* sweat drop */}
-      <path d={`M${b1cx + 21},${b1Top - 30} Q${b1cx + 27},${b1Top - 20} ${b1cx + 21},${b1Top - 14} Q${b1cx + 15},${b1Top - 20} ${b1cx + 21},${b1Top - 30}Z`}
-        fill="#8ed0e0" />
+      {/* mascot on top of 4/27 bar */}
+      <image href={charaImg} x={b1cx - 28} y={b1Top - 58} width="56" height="60" />
 
       {/* baseline */}
       <line x1="10" y1={cb} x2="330" y2={cb} stroke="#dde8ee" strokeWidth="1.5" />
@@ -106,28 +66,7 @@ function BarChart() {
 
 /* ── Notice box mascot icon ── */
 function NoticeMascotIcon() {
-  const body = '#d98070'
-  const hat  = '#c43030'
-  return (
-    <svg width="30" height="30" viewBox="0 0 30 30">
-      {/* arms */}
-      <rect x="1"  y="13" width="7" height="12" rx="3.5" fill={body} />
-      <rect x="22" y="13" width="7" height="12" rx="3.5" fill={body} />
-      {/* body */}
-      <rect x="7" y="9" width="16" height="19" rx="6" fill={body} />
-      {/* hat */}
-      <polygon points="6,9 21,5 23,10 8,14" fill={hat} />
-      {/* stitch */}
-      <rect x="8"  y="12" width="4" height="3" rx="1.5" fill="white" />
-      <rect x="13" y="12" width="4" height="3" rx="1.5" fill="white" />
-      <rect x="18" y="12" width="3" height="3" rx="1.5" fill="white" />
-      {/* eyes */}
-      <circle cx="12" cy="20" r="2.5" fill="white" />
-      <circle cx="18" cy="20" r="2.5" fill="white" />
-      {/* smile */}
-      <path d="M11,25 Q15,28.5 19,25" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-    </svg>
-  )
+  return <img src={charaImg} width="30" height="30" style={{ objectFit: 'contain' }} alt="" />
 }
 
 /* ── Chevron down icon ── */
