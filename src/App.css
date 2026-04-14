@@ -51,6 +51,11 @@
 }
 
 /* EPOS Logo */
+.epos-logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
 .epos-logo {
   display: flex;
   align-items: baseline;

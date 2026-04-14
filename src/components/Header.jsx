@@ -1,4 +1,5 @@
 import React from 'react'
+import logoImg from './logo.jpg'
 
 export default function Header() {
   return (
@@ -12,15 +13,7 @@ export default function Header() {
       </button>
 
       {/* EPOS Logo */}
-      <div className="epos-logo">
-        <span className="logo-e">E</span>
-        <span className="logo-dot-wrap">
-          <span className="logo-p">P</span>
-          <span className="logo-bullet">•</span>
-        </span>
-        <span className="logo-o">O</span>
-        <span className="logo-s">S</span>
-      </div>
+      <img src={logoImg} alt="EPOS" className="epos-logo-img" />
 
       {/* Settings + Help icons */}
       <div className="header-right-icons">
