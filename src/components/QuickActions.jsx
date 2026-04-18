@@ -125,6 +125,26 @@ function GameIcon() {
   )
 }
 
+function MimamoriIcon() {
+  return (
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+      <path d="M6 22L19 9L32 22V33H6V22Z" fill="rgba(90,200,212,0.15)" stroke="#5ac8d4" strokeWidth="2" strokeLinejoin="round"/>
+      <path d="M19 30C19 30 13.5 24.5 13.5 21C13.5 18.5 15.3 17 17.2 17.5C18.2 17.8 19 18.8 19 18.8C19 18.8 19.8 17.8 20.8 17.5C22.7 17 24.5 18.5 24.5 21C24.5 24.5 19 30 19 30Z" fill="#e87080"/>
+    </svg>
+  )
+}
+
+function TestNotifIcon() {
+  return (
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+      <path d="M19 7C14.5 7 11 10.5 11 15V23L8 26H30L27 23V15C27 10.5 23.5 7 19 7Z" fill="#f0b52e" opacity="0.9"/>
+      <path d="M15.5 26C15.5 28 17 29.5 19 29.5C21 29.5 22.5 28 22.5 26" stroke="#f0b52e" strokeWidth="2" fill="none" strokeLinecap="round"/>
+      <circle cx="28" cy="10" r="5.5" fill="#e87080"/>
+      <text x="28" y="13.5" textAnchor="middle" fontSize="7.5" fontWeight="800" fill="white">!</text>
+    </svg>
+  )
+}
+
 const actions = [
   { Icon: PointAleIcon,    label: 'エポス\nポイントエール' },
   { Icon: SupportInvestIcon, label: '応援投資' },
@@ -139,7 +159,7 @@ const actions = [
   { Icon: GameIcon,        label: 'ゲーム' },
 ]
 
-export default function QuickActions() {
+export default function QuickActions({ setPage, onTestNotif }) {
   return (
     <div className="quick-actions">
       {actions.map(({ Icon, label }, i) => (
@@ -150,6 +170,19 @@ export default function QuickActions() {
           <span className="quick-action-label">{label}</span>
         </button>
       ))}
+      <button className="quick-action-btn" onClick={() => setPage && setPage(4)}>
+        <div className="quick-action-circle">
+          <MimamoriIcon />
+        </div>
+        <span className="quick-action-label">見守り</span>
+      </button>
+      <button className="quick-action-btn" onClick={() => onTestNotif && onTestNotif()}>
+        <div className="quick-action-circle">
+          <TestNotifIcon />
+        </div>
+        <span className="quick-action-label">テスト</span>
+      </button>
     </div>
   )
 }
+
