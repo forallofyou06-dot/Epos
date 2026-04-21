@@ -1155,3 +1155,14 @@
   transform-origin: 50% 100%;
   transform-box: fill-box;
 }
+
+/* ── Outdoor / shopping mode ── */
+.scroll-area-outdoor {
+  background: linear-gradient(180deg, #c8eeff 0%, #a8e0a8 30%, #dde8ee 60%);
+}
+.scroll-area-outdoor .illustration-wrap {
+  background: linear-gradient(180deg, #d8f0ff 0%, #b8e8b8 100%);
+}
+.scroll-area-outdoor .content-bg {
+  background: linear-gradient(180deg, #c8eea8 0%, #dde8ee 20%);
+}

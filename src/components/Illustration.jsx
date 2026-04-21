@@ -132,8 +132,50 @@ function MotionLines() {
   )
 }
 
-export default function Illustration() {
-  const [shopping, setShopping] = useState(false)
+function OutdoorBackground() {
+  return (
+    <g>
+      {/* sky */}
+      <rect x="0" y="0" width="360" height="200" fill="#c8eeff" />
+      {/* sun */}
+      <circle cx="48" cy="32" r="22" fill="#f5d030" opacity="0.9" />
+      {/* sun glow */}
+      <circle cx="48" cy="32" r="30" fill="#f5d030" opacity="0.15" />
+      {/* clouds */}
+      <ellipse cx="290" cy="30" rx="38" ry="18" fill="white" opacity="0.9" />
+      <ellipse cx="318" cy="24" rx="28" ry="15" fill="white" opacity="0.88" />
+      <ellipse cx="268" cy="36" rx="22" ry="13" fill="white" opacity="0.85" />
+      <ellipse cx="110" cy="22" rx="28" ry="13" fill="white" opacity="0.8" />
+      <ellipse cx="132" cy="16" rx="22" ry="11" fill="white" opacity="0.78" />
+      {/* ground strip */}
+      <rect x="0" y="170" width="360" height="30" fill="#7ac86a" />
+      <rect x="0" y="180" width="360" height="20" fill="#6aba5a" />
+      {/* path / road */}
+      <rect x="100" y="170" width="160" height="30" fill="#c8b890" />
+      {/* path lines */}
+      <line x1="175" y1="172" x2="175" y2="200" stroke="white" strokeWidth="2" strokeDasharray="6,6" opacity="0.6" />
+      {/* left tree */}
+      <rect x="14" y="130" width="8" height="40" fill="#8b6540" />
+      <ellipse cx="18" cy="120" rx="20" ry="24" fill="#5aaa50" />
+      <ellipse cx="18" cy="112" rx="15" ry="18" fill="#6aba5a" />
+      {/* left small tree */}
+      <rect x="44" y="148" width="6" height="24" fill="#8b6540" />
+      <ellipse cx="47" cy="140" rx="14" ry="16" fill="#5aaa50" />
+      {/* right tree */}
+      <rect x="330" y="132" width="8" height="38" fill="#8b6540" />
+      <ellipse cx="334" cy="122" rx="20" ry="24" fill="#5aaa50" />
+      <ellipse cx="334" cy="114" rx="15" ry="18" fill="#6aba5a" />
+      {/* flower dots on ground */}
+      <circle cx="30" cy="176" r="3" fill="#ff9aaa" />
+      <circle cx="55" cy="178" r="2.5" fill="#f5d030" />
+      <circle cx="320" cy="175" r="3" fill="#ff9aaa" />
+      <circle cx="348" cy="178" r="2.5" fill="#f5d030" />
+      <circle cx="310" cy="180" r="2" fill="#ffffff" opacity="0.8" />
+    </g>
+  )
+}
+
+export default function Illustration({ shopping, setShopping }) {
   const tapCount = useRef(0)
   const tapTimer = useRef(null)
 
@@ -164,7 +206,8 @@ export default function Illustration() {
           </linearGradient>
         </defs>
 
-        <PendantLamp />
+        {shopping && <OutdoorBackground />}
+        {!shopping && <PendantLamp />}
         <g transform="translate(99, 7) scale(0.65)">
           {shopping ? <DayWindow /> : <NightWindow />}
           <Chair />

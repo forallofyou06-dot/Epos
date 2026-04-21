@@ -16,7 +16,8 @@ import { IosBanner, NotifPopup, NotifDetail } from './components/NotificationDem
 
 export default function App() {
   const [page, setPage] = useState(0)
-  const [notif, setNotif] = useState(null) // null | 'banner' | 'popup' | 'detail'
+  const [notif, setNotif] = useState(null)
+  const [shopping, setShopping] = useState(false)
 
   const triggerTestNotif = () => {
     setNotif('banner')
@@ -28,10 +29,10 @@ export default function App() {
       {page === 0 ? (
         <>
           <Header />
-          <div className="scroll-area">
-            <Illustration />
+          <div className={`scroll-area ${shopping ? 'scroll-area-outdoor' : ''}`}>
+            <Illustration shopping={shopping} setShopping={setShopping} />
             <div className="content-bg">
-              <Banner />
+              <Banner shopping={shopping} />
               <PointsSection />
               <PaymentSection />
               <PlatinumBanner />
