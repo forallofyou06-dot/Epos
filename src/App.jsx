@@ -29,6 +29,9 @@ export default function App() {
       {page === 0 ? (
         <>
           <Header />
+          <div className="mimamori-status-bar">
+            <span>いつもの生活が続いています ✨</span>
+          </div>
           <div className={`scroll-area ${shopping ? 'scroll-area-outdoor' : ''}`}>
             <Illustration shopping={shopping} setShopping={setShopping} />
             <div className="content-bg">

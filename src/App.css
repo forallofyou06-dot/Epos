@@ -1166,3 +1166,16 @@
 .scroll-area-outdoor .content-bg {
   background: linear-gradient(180deg, #c8eea8 0%, #dde8ee 20%);
 }
+
+/* ── Mimamori status bar ── */
+.mimamori-status-bar {
+  background: #6aba50;
+  padding: 10px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.mimamori-status-bar span {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
