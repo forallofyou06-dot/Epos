@@ -12,6 +12,7 @@ import PaymentInquiry from './components/PaymentInquiry'
 import QuestScreen from './components/QuestScreen'
 import CardScreen from './components/CardScreen'
 import MimamoriScreen from './components/MimamoriScreen'
+import MimamoriDailyScreen from './components/MimamoriDailyScreen'
 import { IosBanner, NotifPopup, NotifDetail } from './components/NotificationDemo'
 
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
       {page === 0 ? (
         <>
           <Header />
-          <div className="mimamori-status-bar">
+          <div className="mimamori-status-bar" onClick={() => setPage(5)} style={{ cursor: 'pointer' }}>
             <span>いつもの生活が続いています ✨</span>
           </div>
           <div className={`scroll-area ${shopping ? 'scroll-area-outdoor' : ''}`}>
@@ -51,6 +52,8 @@ export default function App() {
         <QuestScreen />
       ) : page === 4 ? (
         <MimamoriScreen onBack={() => setPage(0)} />
+      ) : page === 5 ? (
+        <MimamoriDailyScreen onBack={() => setPage(0)} />
       ) : null}
 
       <BottomNav page={page} setPage={setPage} />

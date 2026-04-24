@@ -170,7 +170,7 @@ export default function QuickActions({ setPage, onTestNotif }) {
           <span className="quick-action-label">{label}</span>
         </button>
       ))}
-      <button className="quick-action-btn" onClick={() => setPage && setPage(4)}>
+      <button className="quick-action-btn" onClick={() => setPage && setPage(5)}>
         <div className="quick-action-circle">
           <MimamoriIcon />
         </div>
